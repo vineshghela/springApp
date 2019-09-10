@@ -25,4 +25,17 @@ public class NotesController {
         return notesRepository.saveAndFlush(note);
     }
 
+    @RequestMapping(value = "notes/{id}", method = RequestMethod.GET)
+    public Note getNote(@PathVariable Long id ){
+        return notesRepository.findOne(id);
+
+    }
+
+    @RequestMapping(value = "notes/{id}", method = RequestMethod.DELETE)
+    public Note deleteNote (@PathVariable Long id){
+        Note exisits = notesRepository.findOne(id);
+        notesRepository.delete(exisits);
+        return exisits;
+    }
+
 }
