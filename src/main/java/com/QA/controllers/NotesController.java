@@ -20,7 +20,7 @@ public class NotesController {
         return notesRepository.findAll();
     }
 
-    @RequestMapping(value = "notes", method = RequestMethod.POST)
+    @RequestMapping(value = "notes", method = RequestMethod.POST, produces = "application/json")
     public Note addNote (@RequestBody Note note){
         return notesRepository.saveAndFlush(note);
     }
