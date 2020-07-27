@@ -1,5 +1,12 @@
 # SpringApp
 
+
+# How to Run
+
+First `fork` the repo and open the project in sprfing boot.
+
+Next run the spring boot application.
+
 # Please use PostMan to make requests.
 
 ## To make post request, go to postman and set a `Post` method.
