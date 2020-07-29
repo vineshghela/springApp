@@ -1,23 +1,14 @@
-
-
 document
-  .querySelector("form.empForm")
-  .addEventListener("submit", function (stop) {
-    stop.preventDefault();
-    let x = document.querySelector("form.empForm").elements;
-
-    let noteNam = x["noteName"].value;
-    let noteDesc = x["noteDescription"].value;
-
-    console.log(noteNam);
-    console.log(noteDesc);
+  .getElementById("noteform")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
   
     const data = {
-      "name": noteNam,
-      "description": noteDesc,
+      "name": this.noteName.value,
+      "description": this.noteDescription.value
     }
 
-    fetch("http://localhost:9000/notes", {
+    fetch("http://localhost:9000/notes/create", {
       method: "POST",
       headers: {
         "Content-type": " application/json;",
